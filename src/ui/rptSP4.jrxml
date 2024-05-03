@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="09d198bb-7613-4fce-b050-dc302e51204a">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT SanPham.maSP, SanPham.tenSP, soluongban=sum(ChiTietHD.soLuong)
+FROM     ChiTietHD INNER JOIN
+                  SanPham ON ChiTietHD.maSP = SanPham.maSP INNER JOIN
+	 HoaDon ON ChiTietHD.maHD = HoaDon.maHD
+group by SanPham.maSP, SanPham.tenSP
+ORDER BY soluongban DESC]]>
+	</queryString>
+	<field name="maSP" class="java.lang.String"/>
+	<field name="tenSP" class="java.lang.String"/>
+	<field name="soluongban" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="106" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="25" forecolor="#FF3333" uuid="1d290dca-f49a-4555-8c56-4b79b576ef82"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="18"/>
+				</textElement>
+				<text><![CDATA[CỬA HÀNG QUẦN ÁO THỜI TRANG NTD_SHOP]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="245" y="45" width="138" height="20" uuid="0ba3f2f1-7ae9-4e54-a138-4ce90c0cbbe4"/>
+				<textElement textAlignment="Left">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Số điện thoại: 0368636452]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="159" y="25" width="297" height="20" uuid="caba1406-32c0-43e8-a094-46ced39c373e"/>
+				<textElement textAlignment="Left">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Địa chỉ: số 4 Nguyễn Văn Bảo, phường 4, quận Gò Vấp]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="82" width="555" height="24" uuid="08e7580f-8c77-4ff6-89d1-0b51473a1a9c"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="16"/>
+				</textElement>
+				<text><![CDATA[DANH SÁCH SẢN PHẨM BÁN CHẠY]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="71" splitType="Stretch">
+			<staticText>
+				<reportElement x="55" y="11" width="100" height="20" uuid="dda7ec81-48a7-4978-a115-fbe6aa3a4f86"/>
+				<text><![CDATA[Mã nhân viên:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="158" y="11" width="100" height="20" uuid="ef577805-48cd-4569-8c5c-c83acc48a46e"/>
+				<text><![CDATA[NV1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="158" y="31" width="100" height="20" uuid="ce69ca2f-554a-49f6-addc-f5a88e9826ed"/>
+				<text><![CDATA[Cao Trùng Dương]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="55" y="31" width="100" height="20" uuid="1b0e15ad-d3e1-4152-80a2-d6020ee8c239"/>
+				<text><![CDATA[Tên nhân viên:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="309" y="11" width="100" height="20" uuid="f7bb0cb9-817c-4fd8-bfd0-6cf9597c2b9b"/>
+				<text><![CDATA[Ngày in báo cáo:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="409" y="11" width="100" height="20" uuid="228ea764-8b43-42e4-a94b-428de7c2eef4"/>
+				<text><![CDATA[20/11/2022]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="27" splitType="Stretch">
+			<line>
+				<reportElement x="2" y="20" width="548" height="1" uuid="70a2cd30-9bd1-4792-a402-141294e35663"/>
+			</line>
+			<staticText>
+				<reportElement x="13" y="2" width="68" height="20" uuid="cc154c48-9190-4b8e-9d63-48940f4a91bd"/>
+				<text><![CDATA[STT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="159" y="1" width="251" height="20" uuid="de058b9a-11d2-4124-89a5-4f08233ce4b9"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<text><![CDATA[Tên sản phẩm]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="410" y="1" width="140" height="20" uuid="95b98049-b9e7-4a6b-a472-643eafb3308d"/>
+				<text><![CDATA[Số lượng bán]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="81" y="2" width="78" height="20" uuid="79d71047-9c81-4287-ba04-888e8485a004"/>
+				<text><![CDATA[Mã SP]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="23" splitType="Stretch">
+			<textField>
+				<reportElement x="407" y="0" width="140" height="20" uuid="d84dc8b8-256b-4ee7-8b75-3eea69865edc"/>
+				<textFieldExpression><![CDATA[$F{soluongban}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="159" y="0" width="251" height="20" uuid="74a3d3f5-5fbb-4ef5-8f85-2a5165ea1628"/>
+				<textFieldExpression><![CDATA[$F{tenSP}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="10" y="0" width="68" height="20" uuid="ea9042c6-a5fd-4901-9840-fc1bfee9afde"/>
+				<textFieldExpression><![CDATA[$V{COLUMN_COUNT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="81" y="0" width="78" height="20" uuid="7d2e2d99-0278-4315-860f-6e0908f6f2b0"/>
+				<textFieldExpression><![CDATA[$F{maSP}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="2" y="20" width="553" height="1" uuid="2d3633dd-1a69-431d-800d-a23443506fd5"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="92" splitType="Stretch">
+			<staticText>
+				<reportElement x="433" y="63" width="100" height="23" uuid="6ba62deb-3b47-445d-9059-6756b063c4c8"/>
+				<textElement textAlignment="Center">
+					<font fontName="Constantia" size="10"/>
+				</textElement>
+				<text><![CDATA[Cao Trùng Dương]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="446" y="32" width="79" height="20" uuid="6ae0d748-5786-4075-bfed-19d570355d39"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Ký Tên]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="441" y="12" width="92" height="20" uuid="545e0609-e0b6-430d-b82a-166668ce3c0a"/>
+				<text><![CDATA[Nhân Viên Báo Cáo]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
